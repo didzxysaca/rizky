@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI & Etika Digital - Era Teknologi Modern</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: {
+                        'matrix': 'matrix 20s linear infinite',
+                        'slide-up': 'slideUp 0.8s ease-out',
+                        'fade-in': 'fadeIn 0.1s ease-in',
+                        'cyber-glow': 'cyberGlow 2s ease-in-out infinite alternate',
+                        'tech-pulse': 'techPulse 3s ease-in-out infinite',
+                        'circuit-flow': 'circuitFlow 4s ease-in-out infinite',
+                        'data-stream': 'dataStream 6s linear infinite',
+                    },
+                    keyframes: {
+                        'matrix': {
+                            '0%': { transform: 'translateY(-100%)' },
+                            '100%': { transform: 'translateY(100vh)' }
+                        },
+                        'slideUp': {
+                            '0%': { transform: 'translateY(50px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' }
+                        },
+                        'fadeIn': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' }
+                        },
+                        'cyberGlow': {
+                            '0%': { boxShadow: '0 0 20px rgba(0, 255, 255, 0.3)' },
+                            '100%': { boxShadow: '0 0 40px rgba(0, 255, 255, 0.8)' }
+                        },
+                        'techPulse': {
+                            '0%, 100%': { transform: 'scale(1)' },
+                            '50%': { transform: 'scale(1.05)' }
+                        },
+                        'circuitFlow': {
+                            '0%, 100%': { borderColor: 'rgba(0, 255, 255, 0.3)' },
+                            '50%': { borderColor: 'rgba(0, 255, 0, 0.8)' }
+                        },
+                        'dataStream': {
+                            '0%': { transform: 'translateX(-100%)' },
+                            '100%': { transform: 'translateX(100vw)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .tech-card {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(30, 41, 59, 0.6) 100%);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+        
+        .tech-card:hover {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 41, 59, 0.8) 100%);
+            border-color: rgba(0, 255, 255, 0.4);
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 255, 255, 0.1);
+        }
+
+        .cyber-border {
+            position: relative;
+            border: 2px solid transparent;
+            background: linear-gradient(45deg, #0f1729, #1e293b) padding-box,
+                       linear-gradient(45deg, #00ffff, #00ff00, #0080ff) border-box;
+        }
+
+        .matrix-bg {
+            background: linear-gradient(135deg, #0f1729 0%, #1e293b 25%, #334155 50%, #0f1729 100%);
+            background-size: 400% 400%;
+            animation: matrix 15s ease infinite;
+        }
+
+        .circuit-pattern {
+            background-image: 
+                radial-gradient(circle at 20% 80%, rgba(0, 255, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(0, 255, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(0, 128, 255, 0.1) 0%, transparent 50%);
+        }
+
+        .tech-text {
+            background: linear-gradient(45deg, #00ffff, #00ff00, #0080ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .data-stream {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .stream-line {
+            position: absolute;
+            width: 2px;
+            height: 100px;
+            background: linear-gradient(to bottom, transparent, #00ffff, transparent);
+            animation: dataStream 6s linear infinite;
+        }
+
+        .stream-line:nth-child(1) { left: 10%; animation-delay: 0s; }
+        .stream-line:nth-child(2) { left: 30%; animation-delay: 1s; }
+        .stream-line:nth-child(3) { left: 50%; animation-delay: 2s; }
+        .stream-line:nth-child(4) { left: 70%; animation-delay: 3s; }
+        .stream-line:nth-child(5) { left: 90%; animation-delay: 4s; }
+
+        .glow-effect {
+            filter: drop-shadow(0 0 10px rgba(0, 255, 255, 0.5));
+        }
+
+        .tech-grid {
+            background-image: 
+                linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+    </style>
+</head>
+<body class="matrix-bg text-white min-h-screen relative overflow-x-hidden">
+    <!-- Data Stream Background -->
+    <div class="data-stream">
+        <div class="stream-line"></div>
+        <div class="stream-line"></div>
+        <div class="stream-line"></div>
+        <div class="stream-line"></div>
+        <div class="stream-line"></div>
+    </div>
+
+    <!-- Tech Grid Overlay -->
+    <div class="fixed inset-0 tech-grid opacity-30 pointer-events-none"></div>
+
+    <div class="container mx-auto px-4 py-6 relative z-10">
+        <!-- Header -->
+        <header class="tech-card rounded-xl p-6 mb-8 text-center">
+            <div class="text-4xl md:text-6xl mb-4 glow-effect">⚡</div>
+            <h1 class="text-3xl md:text-5xl font-black mb-3 tech-text glow-effect">
+                ARTIFICIAL INTELLIGENCE
+            </h1>
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 text-cyan-400">
+                & ETIKA DIGITAL
+            </h2>
+            <p class="text-lg text-slate-300 animate-tech-pulse">
+                Revolusi Teknologi di Era Digital Modern
+            </p>
+            <div class="mt-6 flex justify-center space-x-4">
+                <div class="w-4 h-4 bg-cyan-500 rounded-full animate-pulse"></div>
+                <div class="w-4 h-4 bg-green-500 rounded-full animate-pulse" style="animation-delay: 0.3s"></div>
+                <div class="w-4 h-4 bg-blue-500 rounded-full animate-pulse" style="animation-delay: 0.6s"></div>
+            </div>
+        </header>
+
+        <!-- AI Evolution Timeline -->
+        <section class="tech-card rounded-xl p-6 mb-8 animate-fade-in circuit-pattern">
+            <div class="text-center mb-8">
+                <div class="text-4xl mb-3 glow-effect">🕐</div>
+                <h2 class="text-3xl font-bold tech-text">EVOLUSI KECERDASAN BUATAN</h2>
+            </div>
+            
+            <div class="relative max-w-5xl mx-auto">
+                <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-cyan-500 via-green-500 to-blue-500"></div>
+                
+                <div class="space-y-8">
+                    <div class="flex items-center justify-start relative">
+                        <div class="w-6 h-6 bg-cyan-500 rounded-full absolute left-1/2 transform -translate-x-1/2 animate-tech-pulse shadow-lg shadow-cyan-500/50"></div>
+                        <div class="tech-card rounded-lg p-4 w-5/12 ml-auto mr-6 hover:scale-105 transition-all duration-300">
+                            <div class="text-xl font-bold text-cyan-400 mb-1">1940-1950</div>
+                            <h4 class="text-lg font-semibold mb-2 text-white">Fondasi Teoritis</h4>
+                            <p class="text-sm text-slate-300">McCulloch-Pitts membangun model neuron pertama. Turing menciptakan tes kecerdasan mesin yang revolusioner.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-end relative">
+                        <div class="w-6 h-6 bg-green-500 rounded-full absolute left-1/2 transform -translate-x-1/2 animate-tech-pulse shadow-lg shadow-green-500/50"></div>
+                        <div class="tech-card rounded-lg p-4 w-5/12 mr-auto ml-6 hover:scale-105 transition-all duration-300">
+                            <div class="text-xl font-bold text-green-400 mb-1">1956-1970</div>
+                            <h4 class="text-lg font-semibold mb-2 text-white">Era Kelahiran AI</h4>
+                            <p class="text-sm text-slate-300">Konferensi Dartmouth melahirkan istilah "Artificial Intelligence". Pengembangan program AI pertama dimulai.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-start relative">
+                        <div class="w-6 h-6 bg-blue-500 rounded-full absolute left-1/2 transform -translate-x-1/2 animate-tech-pulse shadow-lg shadow-blue-500/50"></div>
+                        <div class="tech-card rounded-lg p-4 w-5/12 ml-auto mr-6 hover:scale-105 transition-all duration-300">
+                            <div class="text-xl font-bold text-blue-400 mb-1">1980-2000</div>
+                            <h4 class="text-lg font-semibold mb-2 text-white">Kebangkitan Machine Learning</h4>
+                            <p class="text-sm text-slate-300">Expert systems berkembang. Neural networks mulai menunjukkan potensi besar dalam berbagai aplikasi.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-end relative">
+                        <div class="w-6 h-6 bg-cyan-500 rounded-full absolute left-1/2 transform -translate-x-1/2 animate-tech-pulse shadow-lg shadow-cyan-500/50"></div>
+                        <div class="tech-card rounded-lg p-4 w-5/12 mr-auto ml-6 hover:scale-105 transition-all duration-300">
+                            <div class="text-xl font-bold text-cyan-400 mb-1">2000-2010</div>
+                            <h4 class="text-lg font-semibold mb-2 text-white">Era Big Data</h4>
+                            <p class="text-sm text-slate-300">Internet menghasilkan data masif. Machine learning menjadi lebih praktis dengan computational power yang meningkat.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-start relative">
+                        <div class="w-6 h-6 bg-green-500 rounded-full absolute left-1/2 transform -translate-x-1/2 animate-tech-pulse shadow-lg shadow-green-500/50"></div>
+                        <div class="tech-card rounded-lg p-4 w-5/12 ml-auto mr-6 hover:scale-105 transition-all duration-300">
+                            <div class="text-xl font-bold text-green-400 mb-1">2010-2020</div>
+                            <h4 class="text-lg font-semibold mb-2 text-white">Deep Learning Revolution</h4>
+                            <p class="text-sm text-slate-300">CNN dan RNN mengubah computer vision dan NLP. AlphaGo mengalahkan juara dunia Go.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-end relative">
+                        <div class="w-6 h-6 bg-blue-500 rounded-full absolute left-1/2 transform -translate-x-1/2 animate-tech-pulse shadow-lg shadow-blue-500/50"></div>
+                        <div class="tech-card rounded-lg p-4 w-5/12 mr-auto ml-6 hover:scale-105 transition-all duration-300">
+                            <div class="text-xl font-bold text-blue-400 mb-1">2020-Sekarang</div>
+                            <h4 class="text-lg font-semibold mb-2 text-white">Era Generative AI</h4>
+                            <p class="text-sm text-slate-300">GPT, DALL-E, dan LLM mengubah cara kita berinteraksi dengan teknologi. AGI semakin dekat.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Categories -->
+        <section class="tech-card rounded-xl p-6 mb-8 animate-fade-in">
+            <div class="text-center mb-8">
+                <div class="text-4xl mb-3 glow-effect">🧠</div>
+                <h2 class="text-3xl font-bold tech-text">KLASIFIKASI KECERDASAN BUATAN</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div class="tech-card rounded-xl p-4 text-center cyber-border hover:animate-tech-pulse transition-all duration-300">
+                    <div class="text-3xl mb-3 animate-bounce">🎯</div>
+                    <h3 class="text-lg font-bold mb-2 text-cyan-400">Reactive Machines</h3>
+                    <p class="text-sm text-slate-300 mb-3">AI yang hanya merespons situasi saat ini tanpa memori atau pembelajaran.</p>
+                    <div class="text-xs text-slate-400">Contoh: Deep Blue, game AI sederhana</div>
+                </div>
+
+                <div class="tech-card rounded-xl p-4 text-center cyber-border hover:animate-tech-pulse transition-all duration-300">
+                    <div class="text-3xl mb-3 animate-bounce" style="animation-delay: 0.2s">💾</div>
+                    <h3 class="text-lg font-bold mb-2 text-green-400">Limited Memory</h3>
+                    <p class="text-sm text-slate-300 mb-3">AI yang dapat belajar dari data historis untuk membuat keputusan.</p>
+                    <div class="text-xs text-slate-400">Contoh: Self-driving cars, recommendation systems</div>
+                </div>
+
+                <div class="tech-card rounded-xl p-4 text-center cyber-border hover:animate-tech-pulse transition-all duration-300">
+                    <div class="text-3xl mb-3 animate-bounce" style="animation-delay: 0.4s">🤔</div>
+                    <h3 class="text-lg font-bold mb-2 text-blue-400">Theory of Mind</h3>
+                    <p class="text-sm text-slate-300 mb-3">AI yang memahami emosi, kepercayaan, dan intensi manusia.</p>
+                    <div class="text-xs text-slate-400">Status: Dalam pengembangan</div>
+                </div>
+
+                <div class="tech-card rounded-xl p-4 text-center cyber-border hover:animate-tech-pulse transition-all duration-300">
+                    <div class="text-3xl mb-3 animate-bounce" style="animation-delay: 0.6s">🔬</div>
+                    <h3 class="text-lg font-bold mb-2 text-cyan-400">Narrow AI (ANI)</h3>
+                    <p class="text-sm text-slate-300 mb-3">AI yang unggul dalam satu domain spesifik tapi terbatas.</p>
+                    <div class="text-xs text-slate-400">Era saat ini: ChatGPT, image recognition</div>
+                </div>
+
+                <div class="tech-card rounded-xl p-4 text-center cyber-border hover:animate-tech-pulse transition-all duration-300">
+                    <div class="text-3xl mb-3 animate-bounce" style="animation-delay: 0.8s">🌟</div>
+                    <h3 class="text-lg font-bold mb-2 text-green-400">General AI (AGI)</h3>
+                    <p class="text-sm text-slate-300 mb-3">AI dengan kecerdasan setara manusia di semua domain.</p>
+                    <div class="text-xs text-slate-400">Target: 2030-2050 (perkiraan)</div>
+                </div>
+
+                <div class="tech-card rounded-xl p-4 text-center cyber-border hover:animate-tech-pulse transition-all duration-300">
+                    <div class="text-3xl mb-3 animate-bounce" style="animation-delay: 1s">⚡</div>
+                    <h3 class="text-lg font-bold mb-2 text-blue-400">Super AI (ASI)</h3>
+                    <p class="text-sm text-slate-300 mb-3">AI yang melampaui kemampuan kognitif manusia.</p>
+                    <div class="text-xs text-slate-400">Konsep: Singularitas teknologi</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Impact Analysis -->
+        <section class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+            <div class="tech-card rounded-xl p-8 cyber-border animate-fade-in">
+                <div class="text-center mb-8">
+                    <div class="text-5xl mb-4 glow-effect">⚡</div>
+                    <h2 class="text-3xl font-bold text-cyan-400">REVOLUSI TEKNOLOGI</h2>
+                </div>
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-4 p-3 rounded-lg hover:bg-slate-800/50 transition-all duration-300">
+                        <div class="w-3 h-3 bg-cyan-500 rounded-full animate-pulse"></div>
+                        <span class="text-slate-300">Otomatisasi industri manufaktur dan produksi</span>
+                    </div>
+                    <div class="flex items-center space-x-4 p-3 rounded-lg hover:bg-slate-800/50 transition-all duration-300">
+                        <div class="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                        <span class="text-slate-300">Breakthrough dalam riset medis dan farmasi</span>
+                    </div>
+                    <div class="flex items-center space-x-4 p-3 rounded-lg hover:bg-slate-800/50 transition-all duration-300">
+                        <div class="w-3 h-3 bg-blue-500 rounded-full animate-pulse"></div>
+                        <span class="text-slate-300">Transformasi pendidikan dengan personalisasi</span>
+                    </div>
+                    <div class="flex items-center space-x-4 p-3 rounded-lg hover:bg-slate-800/50 transition-all duration-300">
+                        <div class="w-3 h-3 bg-cyan-500 rounded-full animate-pulse"></div>
+                        <span class="text-slate-300">Optimalisasi energi dan smart city</span>
+                    </div>
+                    <div class="flex items-center space-x-4 p-3 rounded-lg hover:bg-slate-800/50 transition-all duration-300">
+                        <div class="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                        <span class="text-slate-300">Advance dalam eksplorasi ruang angkasa</span>
+                    </div>
+                    <div class="flex items-center space-x-4 p-3 rounded-lg hover:bg-slate-800/50 transition-all duration-300">
+                        <div class="w-3 h-3 bg-blue-500 rounded-full animate-pulse"></div>
+                        <span class="text-slate-300">Solusi perubahan iklim dan sustainability</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tech-card rounded-xl p-8 cyber-border animate-fade-in">
+                <div class="text-center mb-8">
+                    <div class="text-5xl mb-4 glow-effect">⚠️</div>
+                    <h2 class="text-3xl font-bold text-red-400">TANTANGAN & RISIKO</h2>
+                </div>
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-4 p-3 rounded-lg hover:bg-slate-800/50 transition-all duration-300">
+                        <div class="w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
+                        <span class="text-slate-300">Displacement pekerja dan skill gap</span>
+                    </div>
+                    <div class="flex items-center space-x-4 p-3 rounded-lg hover:bg-slate-800/50 transition-all duration-300">
+                        <div class="w-3 h-3 bg-orange-500 rounded-full animate-pulse"></div>
+                        <span class="text-slate-300">Algorithmic bias dan diskriminasi</span>
+                    </div>
+                    <div class="flex items-center space-x-4 p-3 rounded-lg hover:bg-slate-800/50 transition-all duration-300">
+                        <div class="w-3 h-3 bg-yellow-500 rounded-full animate-pulse"></div>
+                        <span class="text-slate-300">Surveillance massal dan privacy concerns</span>
+                    </div>
+                    <div class="flex items-center space-x-4 p-3 rounded-lg hover:bg-slate-800/50 transition-all duration-300">
+                        <div class="w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
+                        <span class="text-slate-300">Weaponization dan cyber warfare</span>
+                    </div>
+                    <div class="flex items-center space-x-4 p-3 rounded-lg hover:bg-slate-800/50 transition-all duration-300">
+                        <div class="w-3 h-3 bg-orange-500 rounded-full animate-pulse"></div>
+                        <span class="text-slate-300">Deepfakes dan information manipulation</span>
+                    </div>
+                    <div class="flex items-center space-x-4 p-3 rounded-lg hover:bg-slate-800/50 transition-all duration-300">
+                        <div class="w-3 h-3 bg-yellow-500 rounded-full animate-pulse"></div>
+                        <span class="text-slate-300">Kontrol dan governance yang kompleks</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Digital Ethics Framework -->
+        <section class="tech-card rounded-xl p-8 mb-16 animate-fade-in circuit-pattern">
+            <div class="text-center mb-12">
+                <div class="text-6xl mb-4 glow-effect">🛡️</div>
+                <h2 class="text-4xl font-bold tech-text">FRAMEWORK ETIKA DIGITAL</h2>
+                <p class="text-xl text-slate-300 mt-4">Prinsip fundamental dalam era digital</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="tech-card rounded-xl p-6 text-center hover:scale-110 transition-all duration-300 animate-circuitFlow">
+                    <div class="text-4xl mb-4 animate-tech-pulse">🎯</div>
+                    <h4 class="text-lg font-bold text-cyan-400 mb-2">Transparency</h4>
+                    <p class="text-sm text-slate-300">Keterbukaan dalam algoritma dan proses</p>
+                </div>
+                
+                <div class="tech-card rounded-xl p-6 text-center hover:scale-110 transition-all duration-300 animate-circuitFlow">
+                    <div class="text-4xl mb-4 animate-tech-pulse">⚖️</div>
+                    <h4 class="text-lg font-bold text-green-400 mb-2">Fairness</h4>
+                    <p class="text-sm text-slate-300">Keadilan dan non-diskriminasi</p>
+                </div>
+                
+                <div class="tech-card rounded-xl p-6 text-center hover:scale-110 transition-all duration-300 animate-circuitFlow">
+                    <div class="text-4xl mb-4 animate-tech-pulse">🔐</div>
+                    <h4 class="text-lg font-bold text-blue-400 mb-2">Security</h4>
+                    <p class="text-sm text-slate-300">Perlindungan data dan sistem</p>
+                </div>
+                
+                <div class="tech-card rounded-xl p-6 text-center hover:scale-110 transition-all duration-300 animate-circuitFlow">
+                    <div class="text-4xl mb-4 animate-tech-pulse">👤</div>
+                    <h4 class="text-lg font-bold text-cyan-400 mb-2">Privacy</h4>
+                    <p class="text-sm text-slate-300">Hak privasi dan data personal</p>
+                </div>
+                
+                <div class="tech-card rounded-xl p-6 text-center hover:scale-110 transition-all duration-300 animate-circuitFlow">
+                    <div class="text-4xl mb-4 animate-tech-pulse">📝</div>
+                    <h4 class="text-lg font-bold text-green-400 mb-2">Accountability</h4>
+                    <p class="text-sm text-slate-300">Pertanggungjawaban tindakan</p>
+                </div>
+                
+                <div class="tech-card rounded-xl p-6 text-center hover:scale-110 transition-all duration-300 animate-circuitFlow">
+                    <div class="text-4xl mb-4 animate-tech-pulse">🎓</div>
+                    <h4 class="text-lg font-bold text-blue-400 mb-2">Education</h4>
+                    <p class="text-sm text-slate-300">Literasi digital berkelanjutan</p>
+                </div>
+                
+                <div class="tech-card rounded-xl p-6 text-center hover:scale-110 transition-all duration-300 animate-circuitFlow">
+                    <div class="text-4xl mb-4 animate-tech-pulse">🤝</div>
+                    <h4 class="text-lg font-bold text-cyan-400 mb-2">Respect</h4>
+                    <p class="text-sm text-slate-300">Menghormati hak dan martabat</p>
+                </div>
+                
+                <div class="tech-card rounded-xl p-6 text-center hover:scale-110 transition-all duration-300 animate-circuitFlow">
+                    <div class="text-4xl mb-4 animate-tech-pulse">🌐</div>
+                    <h4 class="text-lg font-bold text-green-400 mb-2">Sustainability</h4>
+                    <p class="text-sm text-slate-300">Keberlanjutan teknologi</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ethical Implementation Comparison -->
+        <section class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+            <div class="tech-card rounded-xl p-8 cyber-border animate-fade-in">
+                <div class="text-center mb-8">
+                    <div class="text-5xl mb-4 glow-effect">✅</div>
+                    <h2 class="text-3xl font-bold text-cyan-400">IMPLEMENTASI ETIKA DIGITAL</h2>
+                </div>
+                <h4 class="text-xl font-semibold mb-6 text-green-400">Dampak Konstruktif:</h4>
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-4 p-3 rounded-lg hover:bg-slate-800/50 transition-all duration-300">
+                        <div class="w-3 h-3 bg-cyan-500 rounded-full animate-pulse"></div>
+                        <span class="text-slate-300">Membangun trust dan credibility dalam ekosistem digital</span>
+                    </div>
+                    <div class="flex items-center space-x-4 p-3 rounded-lg hover:bg-slate-800/50 transition-all duration-300">
+                        <div class="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                        <span class="text-slate-300">Mencegah cyberbullying dan toxic behavior online</span>
+                    </div>
+                    <div class="flex items-center space-x-4 p-3 rounded-lg hover:bg-slate-800/50 transition-all duration-300">
+                        <div class="w-3 h-3 bg-blue-500 rounded-full animate-pulse"></div>
+                        <span class="text-slate-300">Melindungi intellectual property dan kreativitas</span>
+                    </div>
+                    <div class="flex items-center space-x-4 p-3 rounded-lg hover:bg-slate-800/50 transition-all duration-300">
+                        <div class="w-3 h-3 bg-cyan-500 rounded-full animate-pulse"></div>
+                        <span class="text-slate-300">Mempromosikan inclusive dan accessible technology</span>
+                    </div>
+                    <div class="flex items-center space-x-4 p-3 rounded-lg hover:bg-slate-800/50 transition-all duration-300">
+                        <div class="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                        <span class="text-slate-300">Mengoptimalkan peluang karir di bidang teknologi</span>
+                    </div>
+                    <div class="flex items-center space-x-4 p-3 rounded-lg hover:bg-slate-800/50 transition-all duration-300">
+                        <div class="w-3 h-3 bg-blue-500 rounded-full animate-pulse"></div>
+                        <span class="text-slate-300">Menciptakan safe space untuk inovasi dan kolaborasi</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tech-card rounded-xl p-8 cyber-border animate-fade-in">
+                <div class="text-center mb-8">
+                    <div class="text-5xl mb-4 glow-effect">❌</div>
+                    <h2 class="text-3xl font-bold text-red-400">MENGABAIKAN ETIKA DIGITAL</h2>
+                </div>
+                <h4 class="text-xl font-semibold mb-6 text-orange-400">Konsekuensi Destruktif:</h4>
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-4 p-3 rounded-lg hover:bg-slate-800/50 transition-all duration-300">
+                        <div class="w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
+                        <span class="text-slate-300">Digital reputation damage yang permanen</span>
+                    </div>
+                    <div class="flex items-center space-x-4 p-3 rounded-lg hover:bg-slate-800/50 transition-all duration-300">
+                        <div class="w-3 h-3 bg-orange-500 rounded-full animate-pulse"></div>
+                        <span class="text-slate-300">Legal consequences dan financial penalties</span>
+                    </div>
+                    <div class="flex items-center space-x-4 p-3 rounded-lg hover:bg-slate-800/50 transition-all duration-300">
+                        <div class="w-3 h-3 bg-yellow-500 rounded-full animate-pulse"></div>
+                        <span class="text-slate-300">Career opportunities yang hilang selamanya</span>
+                    </div>
+                    <div class="flex items-center space-x-4 p-3 rounded-lg hover:bg-slate-800/50 transition-all duration-300">
+                        <div class="w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
+                        <span class="text-slate-300">Menjadi target cybercrime dan social engineering</span>
+                    </div>
+                    <div class="flex items-center space-x-4 p-3 rounded-lg hover:bg-slate-800/50 transition-all duration-300">
+                        <div class="w-3 h-3 bg-orange-500 rounded-full animate-pulse"></div>
+                        <span class="text-slate-300">Kontribusi pada digital divide dan inequality</span>
+                    </div>
+                    <div class="flex items-center space-x-4 p-3 rounded-lg hover:bg-slate-800/50 transition-all duration-300">
+                        <div class="w-3 h-3 bg-yellow-500 rounded-full animate-pulse"></div>
+                        <span class="text-slate-300">Memperburuk mental health dan social isolation</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Best Practices -->
+        <section class="tech-card rounded-xl p-8 mb-16 animate-fade-in circuit-pattern">
+            <div class="text-center mb-12">
+                <div class="text-6xl mb-4 glow-effect">⚙️</div>
+                <h2 class="text-4xl font-bold tech-text">BEST PRACTICES IMPLEMENTATION</h2>
+                <p class="text-xl text-slate-300 mt-4">Strategi praktis untuk era digital</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="tech-card rounded-xl p-6 cyber-border hover:scale-105 transition-all duration-300">
+                    <div class="text-5xl mb-4 glow-effect">🔐</div>
+                    <h3 class="text-2xl font-bold mb-4 text-cyan-400">Security Protocol</h3>
+                    <ul class="space-y-2 text-sm text-slate-300">
+                        <li>• Multi-factor authentication (MFA)</li>
+                        <li>• Regular password updates</li>
+                        <li>• VPN untuk koneksi public</li>
+                        <li>• Backup data encryption</li>
+                        <li>• Software security updates</li>
+                    </ul>
+                </div>
+
+                <div class="tech-card rounded-xl p-6 cyber-border hover:scale-105 transition-all duration-300">
+                    <div class="text-5xl mb-4 glow-effect">🎯</div>
+                    <h3 class="text-2xl font-bold mb-4 text-green-400">Content Strategy</h3>
+                    <ul class="space-y-2 text-sm text-slate-300">
+                        <li>• Fact-checking sebelum share</li>
+                        <li>• Original content creation</li>
+                        <li>• Proper attribution dan citation</li>
+                        <li>• Constructive engagement</li>
+                        <li>• Professional tone maintenance</li>
+                    </ul>
+                </div>
+
+                <div class="tech-card rounded-xl p-6 cyber-border hover:scale-105 transition-all duration-300">
+                    <div class="text-5xl mb-4 glow-effect">📊</div>
+                    <h3 class="text-2xl font-bold mb-4 text-blue-400">Data Management</h3>
+                    <ul class="space-y-2 text-sm text-slate-300">
+                        <li>• Privacy settings optimization</li>
+                        <li>• Regular data audit</li>
+                        <li>• Selective information sharing</li>
+                        <li>• Digital footprint monitoring</li>
+                        <li>• Consent-based data usage</li>
+                    </ul>
+                </div>
+
+                <div class="tech-card rounded-xl p-6 cyber-border hover:scale-105 transition-all duration-300">
+                    <div class="text-5xl mb-4 glow-effect">🌐</div>
+                    <h3 class="text-2xl font-bold mb-4 text-cyan-400">Network Ethics</h3>
+                    <ul class="space-y-2 text-sm text-slate-300">
+                        <li>• Respectful online communication</li>
+                        <li>• Cultural sensitivity awareness</li>
+                        <li>• Anti-harassment stance</li>
+                        <li>• Inclusive language usage</li>
+                        <li>• Constructive criticism approach</li>
+                    </ul>
+                </div>
+
+                <div class="tech-card rounded-xl p-6 cyber-border hover:scale-105 transition-all duration-300">
+                    <div class="text-5xl mb-4 glow-effect">⚖️</div>
+                    <h3 class="text-2xl font-bold mb-4 text-green-400">Legal Compliance</h3>
+                    <ul class="space-y-2 text-sm text-slate-300">
+                        <li>• Copyright law adherence</li>
+                        <li>• GDPR compliance understanding</li>
+                        <li>• Terms of service awareness</li>
+                        <li>• Digital contract literacy</li>
+                        <li>• Intellectual property respect</li>
+                    </ul>
+                </div>
+
+                <div class="tech-card rounded-xl p-6 cyber-border hover:scale-105 transition-all duration-300">
+                    <div class="text-5xl mb-4 glow-effect">🚀</div>
+                    <h3 class="text-2xl font-bold mb-4 text-blue-400">Future Readiness</h3>
+                    <ul class="space-y-2 text-sm text-slate-300">
+                        <li>• Continuous learning mindset</li>
+                        <li>• Technology trend awareness</li>
+                        <li>• Digital skill development</li>
+                        <li>• AI ethics understanding</li>
+                        <li>• Innovation responsibility</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tech Stack Info -->
+        <section class="tech-card rounded-xl p-8 mb-16 animate-fade-in">
+            <div class="text-center mb-12">
+                <div class="text-6xl mb-4 glow-effect">🔧</div>
+                <h2 class="text-4xl font-bold tech-text">MODERN AI TECH STACK</h2>
+                <p class="text-xl text-slate-300 mt-4">Tools dan teknologi terdepan</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="tech-card rounded-xl p-4 text-center hover:scale-110 transition-all duration-300">
+                    <div class="text-3xl mb-2">🐍</div>
+                    <h4 class="font-bold text-cyan-400">Python</h4>
+                    <p class="text-xs text-slate-400">ML/AI Development</p>
+                </div>
+                <div class="tech-card rounded-xl p-4 text-center hover:scale-110 transition-all duration-300">
+                    <div class="text-3xl mb-2">🧠</div>
+                    <h4 class="font-bold text-green-400">TensorFlow</h4>
+                    <p class="text-xs text-slate-400">Deep Learning</p>
+                </div>
+                <div class="tech-card rounded-xl p-4 text-center hover:scale-110 transition-all duration-300">
+                    <div class="text-3xl mb-2">⚡</div>
+                    <h4 class="font-bold text-blue-400">PyTorch</h4>
+                    <p class="text-xs text-slate-400">Neural Networks</p>
+                </div>
+                <div class="tech-card rounded-xl p-4 text-center hover:scale-110 transition-all duration-300">
+                    <div class="text-3xl mb-2">☁️</div>
+                    <h4 class="font-bold text-cyan-400">AWS/Azure</h4>
+                    <p class="text-xs text-slate-400">Cloud Computing</p>
+                </div>
+                <div class="tech-card rounded-xl p-4 text-center hover:scale-110 transition-all duration-300">
+                    <div class="text-3xl mb-2">🐳</div>
+                    <h4 class="font-bold text-green-400">Docker</h4>
+                    <p class="text-xs text-slate-400">Containerization</p>
+                </div>
+                <div class="tech-card rounded-xl p-4 text-center hover:scale-110 transition-all duration-300">
+                    <div class="text-3xl mb-2">📊</div>
+                    <h4 class="font-bold text-blue-400">Jupyter</h4>
+                    <p class="text-xs text-slate-400">Data Science</p>
+                </div>
+                <div class="tech-card rounded-xl p-4 text-center hover:scale-110 transition-all duration-300">
+                    <div class="text-3xl mb-2">🔥</div>
+                    <h4 class="font-bold text-cyan-400">CUDA</h4>
+                    <p class="text-xs text-slate-400">GPU Computing</p>
+                </div>
+                <div class="tech-card rounded-xl p-4 text-center hover:scale-110 transition-all duration-300">
+                    <div class="text-3xl mb-2">🌐</div>
+                    <h4 class="font-bold text-green-400">REST API</h4>
+                    <p class="text-xs text-slate-400">Web Services</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="tech-card rounded-xl p-8 text-center animate-fade-in cyber-border">
+            <div class="mb-8">
+                <div class="text-6xl mb-6 glow-effect">⚡</div>
+                <h3 class="text-3xl font-bold mb-4 tech-text">
+                    Dibuat Oleh
+                </h3>
+                <div class="text-4xl font-black text-white mb-4">
+                    M Rizki Aditya Pratama
+                </div>
+                <div class="text-2xl text-slate-300 mb-2">
+                    (14)
+                </div>
+                <div class="text-2xl text-slate-300 mb-6">
+                    X TPM 2
+                </div>
+                <div class="flex justify-center space-x-4 mb-6">
+                    <div class="w-4 h-4 bg-cyan-500 rounded-full animate-pulse shadow-lg shadow-cyan-500/50"></div>
+                    <div class="w-4 h-4 bg-green-500 rounded-full animate-pulse shadow-lg shadow-green-500/50" style="animation-delay: 0.3s"></div>
+                    <div class="w-4 h-4 bg-blue-500 rounded-full animate-pulse shadow-lg shadow-blue-500/50" style="animation-delay: 0.6s"></div>
+                </div>
+            </div>
+            
+            <div class="border-t border-slate-700/50 pt-6">
+                <p class="text-slate-400 mb-2 font-mono">© 2025 - AI & Digital Ethics Framework</p>
+                <p class="text-sm text-slate-500 font-mono">Built with modern web technologies for digital literacy</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Enhanced scroll progress with cyber effect
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.pageYOffset;
+            const docHeight = document.body.offsetHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            
+            // Update progress bar if exists
+            const progressBar = document.getElementById('progress-bar');
+            if (progressBar) {
+                progressBar.style.width = scrollPercent + '%';
+            }
+        });
+
+        // Advanced intersection observer with staggered animations
+        const observerOptions = {
+            threshold: 0.2,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0) scale(1)';
+                    }, index * 100);
+                }
+            });
+        }, observerOptions);
+
+        // Initialize advanced animations
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.tech-card').forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(50px) scale(0.95)';
+                card.style.transition = `all 0.8s cubic-bezier(0.25, 0.8, 0.25, 1) ${index * 0.1}s`;
+                observer.observe(card);
+            });
+
+            // Cyber typing effect for title
+            
+        });
+
+        // Dynamic particle system
+        function createParticles() {
+            const particleContainer = document.querySelector('.data-stream');
+            if (particleContainer) {
+                for (let i = 0; i < 10; i++) {
+                    const particle = document.createElement('div');
+                    particle.className = 'absolute w-1 h-1 bg-cyan-500 rounded-full opacity-50';
+                    particle.style.left = Math.random() * 100 + '%';
+                    particle.style.top = Math.random() * 100 + '%';
+                    particle.style.animation = `dataStream ${3 + Math.random() * 3}s linear infinite`;
+                    particle.style.animationDelay = Math.random() * 2 + 's';
+                    particleContainer.appendChild(particle);
+                    
+                    setTimeout(() => {
+                        particle.remove();
+                    }, 6000);
+                }
+            }
+        }
+
+        // Create particles periodically
+        setInterval(createParticles, 2000);
+        
+        // Smooth scroll enhancement
+        document.documentElement.style.scrollBehavior = 'smooth';
+
+        // Performance optimization
+        let ticking = false;
+        function updateAnimations() {
+            // Update any continuous animations here
+            ticking = false;
+        }
+
+        function requestAnimationUpdate() {
+            if (!ticking) {
+                requestAnimationFrame(updateAnimations);
+                ticking = true;
+            }
+        }
+
+        window.addEventListener('scroll', requestAnimationUpdate);
+    </script>
+</body>
+</html>
